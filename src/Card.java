@@ -7,6 +7,8 @@ public class Card {
         ArrayList<Integer> dealerCard = new ArrayList<>();
         int[] randBox = new int[2];
         int turn = 1;
+        int victory = 0, defeact = 0, draw = 0;
+        int[] outComeBox = new int[3];
 
         while(true) {
             System.out.printf("Game %d\n",turn);
@@ -16,7 +18,13 @@ public class Card {
             playerCard.add(randBox[0]);
             dealerCard.add(randBox[1]);
 
+            Judge get = new Judge();
             printCard(playerCard, dealerCard);
+            outComeBox = get.outCome(randBox,victory,defeact,draw);
+
+            victory = outComeBox[0];
+            defeact = outComeBox[1];
+            draw = outComeBox[2];
 
             System.out.print("한 게임 더 하시겠습니까? (Y / N) ");
             Scanner sc = new Scanner(System.in);
