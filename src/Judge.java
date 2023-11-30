@@ -7,9 +7,8 @@ public class Judge {
         if (playerCard > dealerCard) {
             ++victory;
             System.out.println("당신이 이겼습니다.");
-
         }
-        else if(playerCard < dealerCard){
+        else if(playerCard < dealerCard) {
             ++defeact;
             System.out.println("딜러가 이겼습니다.");
         }
@@ -19,7 +18,7 @@ public class Judge {
         }
 
         System.out.printf("현재 전적 : %d승 ",victory);
-        if (draw > 0){
+        if (draw > 0) {
             System.out.printf("%d무 ",draw);
         }
         System.out.printf("%d패\n",defeact);
