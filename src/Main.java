@@ -5,7 +5,7 @@
 //5. 계속 게임을 계속 진행할지 진행여부를 결정하는 기능 구현
 public class Main {
     public static void main(String[] args) {
-        System.out.println("간단한 카드 게임을 시작합니다");
+        System.out.println("간단한 카드 게임을 시작합니다\n");
         Card star = new Card();
         star.Game();
     }

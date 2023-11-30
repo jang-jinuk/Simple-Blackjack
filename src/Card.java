@@ -6,8 +6,12 @@ public class Card {
         ArrayList<Integer> playerCard = new ArrayList<>();
         ArrayList<Integer> dealerCard = new ArrayList<>();
         int[] randBox = new int[2];
+        int turn = 1;
 
         while(true) {
+            System.out.printf("Game %d\n",turn);
+            turn++;
+
             randBox = randomCard();
             playerCard.add(randBox[0]);
             dealerCard.add(randBox[1]);
@@ -16,13 +20,16 @@ public class Card {
 
             System.out.print("한 게임 더 하시겠습니까? (Y / N) ");
             Scanner sc = new Scanner(System.in);
-            char goStop = sc.next().charAt(0);
+            String playerInput = sc.next();
+            playerInput = playerInput.toLowerCase();
+            char goStop =  playerInput.charAt(0);
 
             if (goStop == 'n') {
                 System.out.println("게임을 종료합니다.\n" +
                         "플레이해주셔서 감사합니다.");
                 break;
             }
+            System.out.println();
         }
     }
     int [] randomCard() {
